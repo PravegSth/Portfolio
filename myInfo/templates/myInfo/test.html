@@ -1,0 +1,311 @@
+{% load static %}
+<html>
+<head>
+    <title>Marriage</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="{% static 'myInfo/img/pp.png' %}" rel="shortcut icon" type="image/x-icon" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+    <body style="background: url('{% static "myInfo/img/newCard.jpg" %}') no-repeat; background-size:cover;">
+
+    <div style="height:100px; width:100%; color:white; background: url('{% static "myInfo/img/banner.jpg" %}') no-repeat; background-size: 400px 120px;; background-position: center center; text-align: center; padding: 20px 0;"><h3>Marriage Card Game <br> Score Board</h3></div>
+    <br/>
+    <div style="margin-left: auto; margin-right: auto; width: 520px;">
+<!--    <div id="Result" style="color:white; font-weight:bold; font-size: 24px;"></div>-->
+    <div class="input_fields_wrap"1>
+        <center><div class="d-none" id="charger" style="color:yellow; font-weight:bold; font-size: 24px; border: solid 1px; width: 200px; margin-bottom: 10px;">Total Points<br><div id="Total"></div></div></center>
+
+    <div>
+        <input class="form-control" value="P1" style="width: 120; display: inline;" type="text" placeholder="Player Name" name="mytext[]"/>
+        <input type="checkbox" style="margin-left: 20px;" id="seen" name="seen" value="seen"/>
+        <label style="margin-right: 4px; color:yellow; font-size: 18px; font-weight: bold;">Seen</label>
+        <span id="yo" name="yoyo" class="soccer d-none">
+        <input type="checkbox" style="margin-left: 20px;" id="dublee" name="dublee" value="dublee"/>
+        <label style="margin-right: 8px; color:yellow; font-size: 18px; font-weight: bold;">Dublee</label>
+        </span>
+        <input class="form-control" style="width: 60; display: inline;" type="text" placeholder="Maal" name="maal[]"/>
+        <span class="Result" style="color:white; font-weight:bold; font-size: 24px; margin-left: 50px;"></span>
+    </div>
+    </div>
+        <button class="add_field_button btn btn-primary">Add Players</button><br><br>
+        <center><button class="ok btn btn-primary" onclick="haha()">Calculate</button></center>
+    <br><br>
+        </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+    var total_points = []
+
+    $(document).ready(function() {
+	var max_fields      = 10; //maximum input boxes allowed
+	var wrapper   		= $(".input_fields_wrap"); //Fields wrapper
+	var add_button      = $(".add_field_button"); //Add button ID
+
+	var x = 1; //initlal text box count
+	$(add_button).click(function(e){ //on add input button click
+		e.preventDefault();
+		if(x < max_fields){ //max input box allowed
+			x++; //text box increment
+			$(wrapper).append('<div><input class="form-control play" style="width: 120; display:inline;" type="text" placeholder="Player Name" name="mytext[]"/><input type="checkbox" style="margin-left: 24px; margin-right: 4px;" id="seen" name="seen" value="seen" /><label style="margin-right: 10px; color:yellow; font-size: 18px; font-weight: bold;">Seen</label><span id="yo" name="yoyo" class="soccer d-none"><input type="checkbox" style="margin-left: 20px;" id="dublee" name="dublee" value="dublee"/><label style="margin-right: 15px; color:yellow; font-size: 18px; font-weight: bold;">Dublee</label></span><input class="form-control" style="width: 60; display: inline;" type="text" placeholder="Maal" name="maal[]"/><a style="margin-left: 4px; font-weight: bold;" href="#" class="remove_field btn btn-danger">—</a><span class="Result" style="color:white; font-weight:bold; font-size: 24px; margin-left: 8px;"></span></div>'); //add input box
+		}
+
+        var m = document.getElementsByClassName("play")
+        for(var t=1,z=0; z<m.length; z++){
+            t+= 1
+            m[z].setAttribute("value", "P"+t)
+        }
+
+        if(x > 3){
+            var d = document.getElementsByClassName("soccer");
+            for(var p=0; p<d.length; p++){
+                if(d[p].classList.contains("d-none")){
+                    d[p].classList.remove("d-none")
+                }
+            }
+        }
+	});
+
+
+
+
+
+	$(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+		e.preventDefault(); $(this).parent('div').remove(); x--;
+		if(x <= 3){
+            var d = document.getElementsByClassName("soccer");
+            for(var p=0; p<d.length; p++){
+                d[p].classList.add("d-none")
+            }
+        }
+	})
+});
+
+
+
+
+    function haha(){
+        document.getElementById("charger").classList.remove("d-none")
+        document.getElementById("Total").innerHTML = ""
+        var values = $("input[name='mytext\\[\\]']")
+              .map(function(){return $(this).val();}).get();
+
+        if(values.length<4){
+
+            var seen = [];
+                $.each($("input[name='seen']"), function(){
+                    if($(this).is(':checked')){
+                        seen.push($(this).val());
+                    }
+                    else{
+                        seen.push("Unseen")
+                    }
+                });
+
+             var maal = $("input[name='maal\\[\\]']")
+                  .map(function(){return $(this).val();}).get();
+
+            var players = []
+            for(var i = 0; i<values.length ; i++){
+                players.push({name:values[i], seen:seen[i], maal:Number(maal[i]), point:0})
+            }
+
+            var total = 0
+            for(var i=0; i<values.length; i++){
+                if(players[i]['seen'] == "Unseen" && players[i]['maal'] != 0){
+                    players[i]['maal'] = 0
+                    alert('Maal of ' + players[i]['name'] + ' will be Zero')
+                }
+
+                total += players[i]['maal']
+            }
+
+
+            while(true){
+                var gamer = prompt("Who is the gamer? ")
+                flag = 0
+                for(var i=0; i<values.length; i++){
+                    yo = players[i]['name']
+                    if(yo == gamer){
+                        flag = 1
+                        break;
+                    }
+                 }
+                if(flag == 0){
+                    alert("No player with that name")
+                }
+                if(flag == 1){
+                    break;
+                 }
+             }
+
+             for(var i=0; i<values.length; i++){
+                if(players[i]['seen']=='seen' && players[i]['name'] != gamer){
+                    players[i]['point'] = players[i]['maal'] * values.length - (total + 3)
+                 }
+                if(players[i]['seen'] == 'Unseen'){
+                    players[i]['point'] = - total - 10
+                }
+                if(players[i]['name'] == gamer){
+                    i['point'] = 0
+                }
+             }
+
+             var non_gamer_point = 0
+
+             for(var i=0; i<values.length; i++){
+                if(players[i]['name'] != gamer){
+                    non_gamer_point -= players[i]['point']
+                }
+             }
+
+             for(var i=0; i<values.length; i++){
+                if(players[i]['name'] == gamer){
+                    players[i]['point'] = non_gamer_point
+                }
+             }
+        }
+
+        else{
+            var seen = [];
+                $.each($("input[name='seen']"), function(){
+                    if($(this).is(':checked')){
+                        seen.push($(this).val());
+                    }
+                    else{
+                        seen.push("Unseen")
+                    }
+                });
+
+            var dublee = [];
+                $.each($("input[name='dublee']"), function(){
+                    if($(this).is(':checked')){
+                        dublee.push($(this).val());
+                    }
+                    else{
+                        dublee.push("NoDublee")
+                    }
+                });
+
+             var maal = $("input[name='maal\\[\\]']")
+                  .map(function(){return $(this).val();}).get();
+
+            var players = []
+            for(var i = 0; i<values.length ; i++){
+                players.push({name:values[i], seen:seen[i], dublee:dublee[i], maal:Number(maal[i]), point:0})
+            }
+
+            var soya = document.getElementsByClassName('mal')
+            var total = 0
+            for(var i=0; i<values.length; i++){
+                if(players[i]['seen'] == "Unseen" && players[i]['maal'] != 0){
+                    players[i]['maal'] = 0
+                    alert('Maal of ' + players[i]['name'] + ' will be Zero')
+                    soya[i].setAttribute("value", 0)
+                }
+
+                total += players[i]['maal']
+            }
+
+
+            while(true){
+                var gamer = prompt("Who is the gamer? ")
+                flag = 0
+                for(var i=0; i<values.length; i++){
+                    yo = players[i]['name']
+                    if(yo == gamer){
+                        flag = 1
+                        break;
+                    }
+                 }
+                if(flag == 0){
+                    alert("No player with that name")
+                }
+                if(flag == 1){
+                    break;
+                 }
+             }
+             var yes = prompt("Is " + gamer + " playing Dublee? (yes/no): ")
+
+             for(var i=0; i<values.length; i++){
+                if(players[i]['seen']=='seen' && players[i]['name'] != gamer && yes=='yes' || yes=='Yes' && players[i]['dublee']=='dublee'){
+                    players[i]['point'] = players[i]['maal'] * values.length - total
+                 }
+                if(players[i]['seen']=='seen' && players[i]['name'] != gamer && yes != 'yes' || yes!='Yes' && players[i]['dublee']=='dublee'){
+                    players[i]['point'] = players[i]['maal'] * values.length - total
+                }
+                if(players[i]['seen']=='seen' && players[i]['name'] != gamer && yes == 'yes' || yes=='Yes' && players[i]['dublee'] != 'dublee'){
+                    players[i]['point'] = players[i]['maal'] * values.length - (total + 5)
+                }
+                if(players[i]['seen']=='seen' && players[i]['name'] != gamer && yes != 'yes' || yes!='Yes' && players[i]['dublee'] != 'dublee'){
+                    players[i]['point'] = players[i]['maal'] * values.length - (total + 3)
+                }
+                if(players[i]['seen'] != 'seen' && players[i]['name'] != gamer && yes == 'yes' || yes=='Yes' && players[i]['dublee'] != 'dublee'){
+                    players[i]['point'] = -(total + 10)
+                }
+                if(players[i]['seen'] != 'seen' && players[i]['name'] != gamer && yes != 'yes' || yes!='Yes' && players[i]['dublee'] != 'dublee'){
+                    players[i]['point'] = -(total + 10)
+                }
+
+             }
+
+             var non_gamer_point = 0
+
+             for(var i=0; i<values.length; i++){
+                if(players[i]['name'] != gamer){
+                    non_gamer_point -= players[i]['point']
+                }
+             }
+
+             for(var i=0; i<values.length; i++){
+                if(players[i]['seen'] == 'seen' && players[i]['name'] == gamer && yes=='yes' && players[i]['dublee']=='dublee'){
+                    players[i]['point'] = (non_gamer_point)
+                }
+                if(players[i]['seen'] == 'seen' && players[i]['name'] == gamer && yes != 'yes' && players[i]['dublee'] != 'dublee'){
+                    players[i]['point'] = (non_gamer_point)
+                }
+             }
+        }
+
+        var result = []
+        var PlayerPoint = []
+
+         for(var i=0; i<values.length; i++){
+
+                result.push("= " + players[i]['point'])
+                if(total_points.length == i){
+                    total_points.push(players[i]['point'])
+                }
+                else{
+                    total_points[i] += players[i]['point']
+                }
+                PlayerPoint.push(players[i]['name'] + " = " + total_points[i])
+         }
+
+
+        var ppp = document.getElementsByClassName("Result")
+        for(var i=0; i<result.length; i++){
+            ppp[i].innerHTML = result[i]
+
+        }
+
+        for(var i=0; i<total_points.length; i++){
+            document.getElementById('Total').append(PlayerPoint[i])
+            var lineBreak = document.createElement("br")
+            document.getElementById('Total').append(lineBreak)
+        }
+
+        console.log(players)
+        console.log(seen)
+        console.log(total)
+
+};
+
+    </script>
+
+</body>
+</html>
+

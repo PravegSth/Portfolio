@@ -1,0 +1,667 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Website Title -->
+    <title>Praveg Shrestha - Professional Developer</title>
+    <!-- Bootstrap -->
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">-->
+	<link href="{% static 'myInfo/assets/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+      <!-- Font-Awesome -->
+    <link href="{% static 'myInfo/assets/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+	<!-- Lightbox -->
+	<link href="{% static 'myInfo/assets/lightbox/css/lightbox.css' %}" rel="stylesheet">
+    <!-- Text Rotator-->
+	<link href="{% static 'myInfo/assets/textrotator/simpletextrotator.css' %}" rel="stylesheet">
+	<!-- FlexSlider -->
+    <link href="{% static 'myInfo/assets/flexslider/flexslider.css' %}" rel="stylesheet">
+	<!-- Theme Style -->
+    <link href="{% static 'myInfo/css/haha.css' %}" rel="stylesheet">
+	<!-- Animations -->
+    <link href="{% static 'myInfo/css/animate.css' %}" rel="stylesheet">
+	<!-- Custom Favicon -->
+	<link href="{% static 'myInfo/img/pp.png' %}" rel="shortcut icon" type="image/x-icon" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="{% static 'myInfo/assets/html5shiv/html5shiv.js' %}"></script>
+    <script src="{% static 'myInfo/assets/respond/respond.min.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <![endif]-->
+  </head>
+    <body id="top">
+
+      <!-- ****************************** Preloader ************************** -->
+      <div id="preloader"></div>
+	  	<!-- ==========================
+        HEADER SECTION 
+        =========================== -->
+        <header id="home">
+		    <!-- creative menu -->
+            <div class="container-fluid">
+              <div class="row">
+                <div class="menu-wrap">
+				<nav class="menu">
+				    <!-- Menu Links -->
+					<div class="icon-list">
+						<a href=""><i class="fa fa-fw fa-home fa-3x"></i><span>Home</span></a>
+						<a href="#down"><i class="fa fa-fw fa-quote-left fa-3x"></i><span>About</span></a>
+						<a href="{% url 'game' %}"><i class="fa fa-gamepad fa-3x"></i><span>Game</span></a>
+						<a href="#servicess"><i class="fa fa-fw fa-globe fa-3x"></i><span>Service</span></a>
+						<a href=""><i class="fa fa-fw fa-picture-o fa-3x"></i><span>Portfolio</span></a>
+						<a href=""><i class="fa fa-fw fa-rss fa-3x"></i><span>Blog</span></a>
+						<a href="#googlemaps"><i class="fa fa-fw fa-envelope-o fa-3x"></i><span>Contact</span></a>
+					</div>
+				</nav>
+			    </div>
+			    <button class="menu-button" id="open-button"></button><!-- menu button -->
+              </div><!--/row-->
+            </div><!--/container-->
+		  <!-- Header Image -->
+          <section class="hero" id="hero">
+            <div class="container">
+			  <!-- Slider Button (don't edit!)-->
+              <div class="row">
+                <div class="col-md-12 text-right navicon">
+                  <a id="nav-toggle" class="nav_slide_button" href="index.html#"><span></span></a>
+                </div>
+              </div>
+			  <!-- HEADER HEADLINE -->
+
+              <div class="row">
+                <div class="col-md-8 col-md-offset-1 inner">
+                  <h3 class="animated fadeInUp delay-05s"><span style="margin-left: 10px; font-size: 24px;" class="rotate">Web Developer,Programmer,Youtuber</span></h3><!-- Text Rotator -->
+                  <h1 class="animated fadeInDown">
+                    P<span style="color:#E04343;">r</span>aveg<br/>
+                      <span style="color:#696969">S<span style="color:#FFE800">h</span>reshta</span>
+                  </h1><!-- Title -->
+
+                </div>
+              </div>
+			  <!-- Learn More Button -->
+              <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center">
+                  <a href="#down" class="scrollto wow fadeInUp delay-5s ">
+			            <p>SEE MORE</p>
+			            <p class="scrollto--arrow"><img src="{% static 'myInfo/img/scroll-down.png' %}" alt="scroll down arrow"></p>
+			        </a>
+                </div>
+              </div>
+            </div>
+          </section>
+		  <!-- Header Image End -->
+        </header>
+		<!-- ==========================
+        HEADER SECTION END  
+        =========================== -->
+		
+		
+		
+		
+		<!-- ==========================
+        ABOUT SECTION  
+        =========================== -->
+        <section class="intro text-center section-padding color-bg" id="about">
+          <div class="container">
+		    <!-- WELCOME TEXT -->
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2 wp1">
+                <a href="#servicess"><h1 class="arrow" id="down">A little <span>about</span> me</h1></a><!-- Headline -->
+				<!-- about / welcome text -->
+                <p>IT is my passion and I'm always looking forward to expand my horizon with different IT skills and techniques.
+I have worked as a Python Programmer for a year where I worked on both Front end (HTML5, CSS, JavaScrpt) & Back end (Django, Flask) technologies.
+I have also worked as PHP Laravel Developer where I worked very closely with huge team of Developers and Database Administrators and me along with my team developed Labor Directory System.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+
+
+<!-- ==========================
+        SERVICE SECTION 
+        =========================== -->
+        <section class="features text-center section-padding" id="service">
+          <div class="container">
+        <!-- Headline -->
+            <div class="row">
+              <div class="col-md-12">
+                <a href="#msc"><h1 class="arrow" id="servicess">I do amazing things for clients</h1></a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+          <div class="services">
+          <!-- Service Box 1 -->
+                  <div class="col-md-4 wp2 item">
+                    <div class="icon">
+                      <i class="fa fa-code"></i><!-- Icon -->
+                    </div>
+                    <h2>Programmer</h2><!-- Title -->
+                    <p>I can write codes on various progamming languages including Python, Java, C++, C#, .NET and Ruby. I am familiar with database, ORM, API's and Object Oriented Concepts.</p><!-- Description -->
+                  </div>
+          <!-- Service Box 2 -->
+                  <div class="col-md-4 wp2 item delay-05s">
+                    <div class="icon">
+                      <i class="fa fa-desktop"></i><!-- Icon -->
+                    </div>
+                    <h2>Web Developer</h2><!-- Title -->
+                    <p>I have a sound knowledge of font-end as well as back-end web development. For the fron-end, I use HTML5, CSS3, JavaScript and BootStrap. For the back-end I use Django, Flask and Laravel framework.</p><!-- Description -->
+                  </div>
+          <!-- Service Box 3 -->
+                  <div class="col-md-4 wp2 item delay-1s">
+                    <div class="icon">
+                      <i class="fa fa-youtube-play"></i><!-- Icon -->
+                    </div>
+                    <h2>Youtuber</h2><!-- Title -->
+                    <p>I have a YouTube channel called "Tech Vitals" where I provide tutorials for various technological fields containing Linux, Python, Java and Web development. I am looking forward to add more tutorial stuffs.</p><!-- Description -->
+                  </div>
+          </div>
+                  <div class="clearfix"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+
+
+
+		<div class="container-fluid">
+		    <!-- About 1 -->
+			<div class="row color-bg">
+				<div class="col-md-6 nopadding features-intro-img">
+					<div class="about-image" style="background-image:url({% static 'myInfo/img/web.png' %}); background-size: 100% 100%;; background-repeat: no-repeat;"></div><!-- about image 1 -->
+				</div>
+				<div class="col-md-6 about-text" id="msc">
+					<h6>High quality webdesign</h6><!-- headline-->
+					<p>We develop software products tailored to business and organization requirement. E-commerce, Job Portals, b2b products are the focus point of our web development services. Apart that, We are also keen on developing extensions for open source web solution like Joomla, WordPress, Magento, Drupal, opencart, etc.</p><br><!-- About Text 1 -->
+					<a href="index.html#team" class="weight-outline-btn">Read more</a><!-- read more button  -->			
+				</div>
+			</div>
+			<!-- About 2 -->
+			<div class="row">
+				<div class="col-md-6 about-text">
+					<h6>Software Development</h6><!-- Headline -->
+					<p>Our software development services are designed with your business needs in mind. You’ll have a dedicated team of software experts and we work seamlessly with your internal team to get the job done right. We’re set up to be flexible: as your business needs change, so can we.</p><br><!-- About Text 2 -->
+					<a href="index.html#team" class="weight-outline-btn">Read more</a>	<!-- read more button  -->				
+				</div>
+				<div class="col-md-6 nopadding features-intro-img">
+					<div class="about-image" style="background-image:url({% static 'myInfo/img/soft.jpg' %}); background-size: 100% 100%;; background-repeat: no-repeat;"></div><!-- about image 2 -->
+				</div>
+			</div>
+			<!-- About 3 -->
+			<div class="row color-bg">
+				<div class="col-md-6 nopadding features-intro-img">
+					<div class="about-image" style="background-image:url({% static 'myInfo/img/You.jpg' %}); background-size: 100% 100%;; background-repeat: no-repeat;"></div><!-- about image 3 -->
+				</div>
+				<div class="col-md-6 about-text">
+					<h6>YouTube</h6><!-- Headline-->
+					<p>My YouTube channel "Tech Vitals" focus on providing you the deep understanding and knowledge of different technology with the basic to advanced tutorial videos. You can expect the contents of all the vitals of technology from Tech Vitals. The goal of this channel is to encourage you to Keep Learning.</p><br><!-- About Text 3 -->
+					<a href="index.html#team" class="weight-outline-btn">Read more</a><!-- read more button  -->					
+				</div>
+			</div>
+		</div>
+		<!-- ==========================
+        ABOUT SECTION END
+        =========================== -->	
+
+		
+		
+		
+		<!-- ==========================
+        PORTFOLIO SECTION
+    =========================== -->
+<!--        <section class="swag text-center" id="portfolio">-->
+<!--          <div class="container">-->
+<!--		    &lt;!&ndash; Headline &ndash;&gt;-->
+<!--            <div class="row">-->
+<!--&lt;!&ndash;              <h1 class="arrow">&ndash;&gt;-->
+<!--&lt;!&ndash;                Recent <span>Porojects</span>&ndash;&gt;-->
+<!--&lt;!&ndash;              </h1>&ndash;&gt;-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </section>-->
+
+<!--        <div class="container">-->
+<!--          <div class="row row-offset-0">-->
+
+          <!-- PORTFOLIO ITEM 1 -->
+<!--          <div class="col-md-3 col-sm-6">-->
+<!--              <div class="overlay-effect effects clearfix">-->
+<!--                  <div class="img">-->
+<!--                      <a href="{% static 'myInfo/img/portfolio/portfolio-01-large.jpg' %}" data-lightbox="roadtrip" title="Project One - Lorem Ipsum"><img class="grayscale" src="img/portfolio/portfolio-01-thumbnail.jpg" alt="Portfolio Item"></a>-->
+<!--                  </div>-->
+<!--              </div>-->
+<!--          </div>-->
+<!--  	    &lt;!&ndash; PORTFOLIO ITEM END &ndash;&gt;-->
+
+<!--  	    &lt;!&ndash; PORTFOLIO ITEM 2 &ndash;&gt;-->
+<!--          <div class="col-md-3 col-sm-6">-->
+<!--              <div class="overlay-effect effects clearfix">-->
+<!--                  <div class="img">-->
+<!--                      <a href="{% static 'myInfo/img/portfolio/portfolio-02-large.jpg' %}" data-lightbox="roadtrip" title="Project Two - Lorem Ipsum"><img class="grayscale" src="img/portfolio/portfolio-02-thumbnail.jpg" alt="Portfolio Item"></a>-->
+<!--                  </div>-->
+<!--              </div>-->
+<!--          </div>-->
+<!--  	    &lt;!&ndash; PORTFOLIO ITEM END &ndash;&gt;-->
+
+<!--  		&lt;!&ndash; PORTFOLIO ITEM 3 &ndash;&gt;-->
+<!--          <div class="col-md-3 col-sm-6">-->
+<!--              <div class="overlay-effect effects clearfix">-->
+<!--                  <div class="img">-->
+<!--                      <a href="{% static 'myInfo/img/portfolio/portfolio-03-large.jpg' %}" data-lightbox="roadtrip" title="Project Three - Lorem Ipsum"><img class="grayscale" src="img/portfolio/portfolio-03-thumbnail.jpg" alt="Portfolio Item"></a>-->
+<!--                  </div>-->
+<!--              </div>-->
+<!--          </div>-->
+<!--  	    &lt;!&ndash; PORTFOLIO ITEM END &ndash;&gt;-->
+
+<!--  		&lt;!&ndash; PORTFOLIO ITEM 4 &ndash;&gt;-->
+<!--          <div class="col-md-3 col-sm-6 ">-->
+<!--              <div class="overlay-effect effects clearfix">-->
+<!--                  <div class="img">-->
+<!--                      <a href="{% static 'myInfo/img/portfolio/portfolio-04-large.jpg' %}" data-lightbox="roadtrip" title="Project Four - Lorem Ipsum"><img class="grayscale" src="img/portfolio/portfolio-04-thumbnail.jpg" alt="Portfolio Item"></a>-->
+<!--                  </div>-->
+<!--              </div>-->
+<!--          </div>-->
+<!--  	    &lt;!&ndash; PORTFOLIO ITEM END &ndash;&gt;-->
+
+<!--          &lt;!&ndash; PORTFOLIO ITEM 5 &ndash;&gt;-->
+<!--          <div class="col-md-3 col-sm-6 ">-->
+<!--              <div class="overlay-effect effects clearfix">-->
+<!--                  <div class="img">-->
+<!--                      <a href="{% static 'myInfo/img/portfolio/portfolio-05-large.jpg' %}" data-lightbox="roadtrip" title="Project Five - Lorem Ipsum"><img class="grayscale" src="img/portfolio/portfolio-05-thumbnail.jpg" alt="Portfolio Item"></a>-->
+<!--                  </div>-->
+<!--              </div>-->
+<!--          </div>-->
+<!--  	    &lt;!&ndash; PORTFOLIO ITEM END &ndash;&gt;-->
+
+<!--  	    &lt;!&ndash; PORTFOLIO ITEM 6 &ndash;&gt;-->
+<!--          <div class="col-md-3 col-sm-6">-->
+<!--              <div class="overlay-effect effects clearfix">-->
+<!--                  <div class="img">-->
+<!--                      <a href="{% static 'myInfo/img/portfolio/portfolio-06-large.jpg' %}" data-lightbox="roadtrip" title="Project Six - Lorem Ipsum"><img class="grayscale" src="img/portfolio/portfolio-06-thumbnail.jpg" alt="Portfolio Item"></a>-->
+<!--                  </div>-->
+<!--              </div>-->
+<!--          </div>-->
+<!--  	    &lt;!&ndash; PORTFOLIO ITEM END &ndash;&gt;-->
+
+<!--  		&lt;!&ndash; PORTFOLIO ITEM 7 &ndash;&gt;-->
+<!--          <div class="col-md-3 col-sm-6">-->
+<!--              <div class="overlay-effect effects clearfix">-->
+<!--                  <div class="img">-->
+<!--                      <a href="{% static 'myInfo/img/portfolio/portfolio-07-large.jpg' %}" data-lightbox="roadtrip" title="Project Seven - Lorem Ipsum"><img class="grayscale" src="img/portfolio/portfolio-07-thumbnail.jpg" alt="Portfolio Item"></a>-->
+<!--                  </div>-->
+<!--              </div>-->
+<!--          </div>-->
+<!--  	    &lt;!&ndash; PORTFOLIO ITEM END &ndash;&gt;-->
+
+<!--  		&lt;!&ndash; PORTFOLIO ITEM 8 &ndash;&gt;-->
+<!--          <div class="col-md-3 col-sm-6">-->
+<!--              <div class="overlay-effect effects clearfix">-->
+<!--                  <div class="img">-->
+<!--                      <a href="{% static 'myInfo/img/portfolio/portfolio-08-large.jpg' %}" data-lightbox="roadtrip" title="Project Eight - Lorem Ipsum"><img class="grayscale" src="img/portfolio/portfolio-08-thumbnail.jpg" alt="Portfolio Item"></a>-->
+<!--                  </div>-->
+<!--              </div>-->
+<!--          </div>-->
+  	    <!-- PORTFOLIO ITEM END -->
+<!--        </div>&lt;!&ndash;/row&ndash;&gt;-->
+<!--      </div>&lt;!&ndash;/.container&ndash;&gt;-->
+		<!-- ==========================
+        PORTFOLIO SECTION END
+        =========================== -->
+			
+
+
+			
+		<!-- ==========================
+        CUSTOM SPACER
+        =========================== -->
+<!--		<div class="spacer-cta text-center">-->
+<!--          <div class="container">-->
+<!--            <div class="row">-->
+<!--              <div class="col-md-12">-->
+<!--                <a href="index.html#contact" class="outline-btn">hire john doe</a>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+		<!-- ==========================
+        CUSTOM SPACER END
+        =========================== -->
+		
+		
+
+    <!-- ==========================
+        BLOG SECTION 
+        =========================== -->
+    <section class="text-center section-padding" id="blog">
+          <div class="container">
+        <!-- Headline -->
+        <div class="row">
+              <div class="col-md-12">
+                <h1 class="arrow">My <span>little</span> blog</h1>
+              </div>
+            </div><br><br>
+      
+      <!-- Blog Slider -->
+            <div class="row">
+<!--              <div id="blogSlider">-->
+<!--                <ul class="slides">-->
+<!--                  <li>-->
+            <!-- Blog Entry 1 -->
+                    <div class="col-md-4 wp4">
+                      <div class="overlay-effect effects clearfix">
+                        <div class="img">
+                          <img src="{% static 'myInfo/img/blog1.jpg' %}" class="grayscale" alt="Blog Item"><!-- Blog Image -->
+                        </div>
+                      </div>
+            <br>
+                      <h2>Creative Minds</h2><!-- Headline -->
+                      <p>Comming Soon.</p><!-- Description-->
+                    </div>
+          <!-- Blog Entry 2 -->
+                    <div class="col-md-4 wp4 delay-05s">
+                      <div class="overlay-effect effects clearfix">
+                        <div class="img">
+                          <img src="{% static 'myInfo/img/blog2.jpg' %}" class="grayscale" alt="Blog Item"><!-- Blog Image -->
+                        </div>
+                      </div>
+            <br>
+                      <h2>Creative Hearts</h2><!-- Headline -->
+                      <p>Under Construction.</p><!-- Description -->
+                    </div>
+          <!-- Blog Entry 3 -->
+                    <div class="col-md-4 wp4 delay-1s">
+                      <div class="overlay-effect effects clearfix">
+                        <div class="img">
+                          <img src="{% static 'myInfo/img/blog3.jpg' %}"  class="grayscale" alt="Blog Item"><!-- Blog Image -->
+                        </div>
+                      </div>
+            <br>
+                      <h2>Creative Ideas</h2><!-- Headline -->
+                      <p>Just a moment.</p><!-- Description-->
+                    </div>
+                  </li>
+                  <li>
+            <!-- Blog Entry 4 -->
+<!--                    <div class="col-md-4 wp4">-->
+<!--                      <div class="overlay-effect effects clearfix">-->
+<!--                        <div class="img">-->
+<!--                          <img src="{% static 'img/blog1.jpg' %}" class="grayscale" alt="Blog Item">&lt;!&ndash; Blog Image &ndash;&gt;-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--            <br>-->
+<!--                      <h2>Creative Minds</h2>&lt;!&ndash; Headline &ndash;&gt;-->
+<!--                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p>&lt;!&ndash; Description &ndash;&gt;-->
+<!--                    </div>-->
+<!--          &lt;!&ndash; Blog Entry 5 &ndash;&gt;-->
+<!--                    <div class="col-md-4 wp4 delay-05s">-->
+<!--                      <div class="overlay-effect effects clearfix">-->
+<!--                        <div class="img">-->
+<!--                          <img src="{% static 'img/blog2.jpg' %}" class="grayscale" alt="Blog Item">&lt;!&ndash; Blog Image &ndash;&gt;-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--            <br>-->
+<!--                      <h2>Creative Hearts</h2>-->
+<!--                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p>-->
+<!--                    </div>-->
+<!--          &lt;!&ndash; Blog Entry 6 &ndash;&gt;-->
+<!--                    <div class="col-md-4 wp4 delay-1s">-->
+<!--                      <div class="overlay-effect effects clearfix">-->
+<!--                        <div class="img">-->
+<!--                          <img src="{% static 'img/blog3.jpg' %}" class="grayscale" alt="Blog Item">&lt;!&ndash; Blog Image &ndash;&gt;-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--            <br>-->
+<!--                      <h2>Creative Ideas</h2>&lt;!&ndash; Headline &ndash;&gt;-->
+<!--                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p>&lt;!&ndash; Description &ndash;&gt;-->
+<!--                    </div>-->
+<!--                  </li>-->
+<!--                </ul>-->
+<!--              </div>-->
+            </div>
+          </div>
+        </section>
+    <!-- ==========================
+        BLOG SECTION END
+        =========================== -->
+    
+        
+		
+		<!-- ==========================
+        CLIENT SECTION 
+        =========================== -->
+		<div class="container-fluid">
+			<div class="row color-bg">
+				<!-- Left Image -->
+				<div class="col-md-6 nopadding features-intro-img wow fadeInLeft">
+					<div class="about-image" style="background-image:url(img/clients.png)"></div>
+				</div>
+				<!-- Clients / Testimonials -->
+				<div class="col-md-6 nopadding about-text">
+				<h6>What our clients said</h6>
+					<div id="clientSlider">
+					   <ul class="slides">
+					       <li><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. <br>	<small>- Pete Rock, A New Tomorrow</small></p></li>
+						   <li><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. <br>	<small>- Michael Snowden, Creativeland CEO</small></p></li>
+						  <li><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. <br>	<small>- Tom Davis, GreenWonder</small></p>	</li>
+					   </ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- ==========================
+        CLIENTS SECTION END
+        =========================== -->
+		
+		
+		
+		
+		
+		<!-- ==========================
+        NEWSLETTER SECTION 
+        =========================== -->
+        <section>
+		<div class="container-fluid">
+				<div class="row color-bg">
+				    <div class="col-md-6 nopadding subscribe text-center">
+					 <h1><i class="fa fa-paper-plane"></i><span>Subscribe our Newsletter</span></h1><!-- Heading -->
+                     <form action="index.html#">
+                       <input type="text" name="" value="" placeholder="" required><!-- E-Mail -->
+                       <input type="submit" name="" value="Send"><!-- Submit Button -->
+                    </form>   
+					</div>
+					<div class="col-md-6 nopadding features-intro-img">
+						 <div class="about-image" style="background-image:url(img/newsletter.png)"></div><!-- Right Image -->
+					</div>
+				</div>
+			</div>
+        </section>
+		<!-- ==========================
+        NEWSLETTER SECTION END
+        =========================== -->
+
+		
+		
+		<!-- ==========================
+        CONTACT SECTION
+        =========================== -->
+        <section class="text-center section-padding contact-wrap" id="contact">
+		  <!-- To Top Button -->
+          <a href="index.html#top" class="up-btn"><i class="fa fa-chevron-up"></i></a>
+          <div class="container">
+		    <!-- Headline -->
+            <div class="row">
+              <div class="col-md-12">
+                <h1 class="arrow">Drop <span>me</span> a line</h1>
+              </div>
+            </div>
+            <div class="row contact-details">
+			  <!-- Adress Box -->
+              <div class="col-md-4">
+                <div class="dark-box box-hover">
+                  <h2><i class="fa fa-map-marker"></i><span>Address</span></h2>
+                  <p>Lindenwold, New Jersey, USA</p>
+                </div>
+              </div>
+			  <!-- Phone Number Box -->
+              <div class="col-md-4">
+                <div class="dark-box box-hover">
+                  <h2><i class="fa fa-mobile"></i><span>Phone</span></h2>
+                  <p>856 322 2703</p>
+                </div>
+              </div>
+			  <!-- E-Mail Box -->
+              <div class="col-md-4">
+                <div class="dark-box box-hover">
+                  <h2><i class="fa fa-paper-plane"></i><span>Email</span></h2>
+                  <p><a href="index.html#">pravegnsth@gmail.com</a></p>
+                </div>
+              </div>
+            </div>
+			<div class="row">
+			  <!-- Google Maps (Change your Settings below) -->
+			  <div class="col-md-6">
+			    <div id="googlemaps"></div>
+			  </div>
+			  <!-- Contact Form -->
+			  <div class="col-md-6 contact">
+			     <form role="form">
+				            <!-- Name -->
+                            <div class="row">
+                                <div class="col-md-6">
+								    <!-- E-Mail -->
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Your name">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+								    <!-- Phone Number -->
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Email address">
+                                    </div>
+                                </div>
+                            </div>
+							<!-- Message Area -->
+                            <div class="form-group">
+                                <textarea class="form-control" placeholder="Write you message here..." style="height:232px;"></textarea>
+                            </div>
+							<!-- Subtmit Button -->
+                            <button type="submit" class="btn btn-send">
+                                Send message
+                            </button>
+                        </form>
+			  </div>
+			</div>
+			<br>
+			<!-- Social Buttons - use font-awesome, past in what you want -->
+            <div class="row">
+              <div class="col-md-12">
+                <ul class="social-buttons">
+                  <li><a href="index.html#" class="social-btn"><i class="fa fa-dribbble"></i></a></li><!-- dribble -->
+                  <li><a href="index.html#" class="social-btn"><i class="fa fa-twitter"></i></a></li><!-- twitter -->
+                  <li><a href="index.html#" class="social-btn"><i class="fa fa-facebook"></i></a></li><!-- facebook -->
+				  <li><a href="index.html#" class="social-btn"><i class="fa fa-deviantart"></i></a></li><!-- deviantart -->
+				  <li><a href="index.html#" class="social-btn"><i class="fa fa-youtube"></i></a></li><!-- youtube -->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+		<!-- ==========================
+        CONTACT SECTION END
+        =========================== -->
+		
+		
+		
+		<!-- ==========================
+        FOOTER SECTION
+        =========================== -->
+        <footer>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <p>All Rights Reserved. &copy; 2020 <a href="#">Praveg Shrestha</a>
+              </div>
+            </div>
+          </div>
+        </footer>
+		<!-- ==========================
+        FOOTER SECTION END
+        =========================== -->		
+		
+		
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- SmoothScroll -->           
+    <script type="text/javascript" src="{% static 'myInfo/assets/smoothscroll/smoothscroll.js' %}"></script>
+    <!-- Bootstrap -->
+    <script src="{% static 'myInfo/assets/bootstrap/js/bootstrap.min.js' %}"></script>
+	<!-- Waypoints -->
+	<script src="{% static 'myInfo/js/waypoints.min.js' %}"></script>
+    <!-- classie.js -->
+	<script src="{% static 'myInfo/js/classie.js' %}"></script>
+    <!-- FlexSlider -->
+    <script src="{% static 'myInfo/assets/flexslider/jquery.flexslider.js' %}"></script>
+	<!-- Modernizr -->
+    <script src="{% static 'myInfo/js/modernizr.js' %}"></script>
+	<!-- Text Rotator -->
+	<script src="{% static 'myInfo/assets/textrotator/jquery.simple-text-rotator.js' %}"></script>
+	<!-- Lightbox.js -->
+    <script src="{% static 'myInfo/assets/lightbox/js/lightbox.min.js' %}"></script>
+    <!-- Google Maps --> 
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeKBBPJTG3v5w3cNPAgM6ZsJiPyL1mP_o&amp;sensor=false"></script>
+	<!-- Theme JavaScript Core -->
+	<script src="{% static 'myInfo/js/main.js' %}"></script>
+	<script src="{% static 'myInfo/js/script.js' %}"></script>
+    <script>$('.carousel').carousel()</script>
+
+	<!-- GOOGLE MAPS DATA -->
+    <script type="text/javascript">
+    // When the window has finished loading create our google map below
+        google.maps.event.addDomListener(window, 'load', init);
+    
+        function init() {
+            // Basic options for a simple Google Map
+            // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+            var mapOptions = {
+                // How zoomed in you want the map to start at (always required)
+                zoom: 15,
+                
+                scrollwheel: false,
+
+                // The latitude and longitude to center the map (always required)
+                center: new google.maps.LatLng(40.68961985411178, -74.01618003845215), // New York 
+
+                // How you would like to style the map. 
+                // This is where you would paste any style found on Snazzy Maps.
+                styles: [	{		featureType:'water',		stylers:[{color:'#F2F2F2'},{visibility:'on'}]	},{		featureType:'landscape',		stylers:[{color:'#FFFFFF'}]	},{		featureType:'road',		stylers:[{saturation:-100},{lightness:45}]	},{		featureType:'road.highway',		stylers:[{visibility:'simplified'}]	},{		featureType:'road.arterial',		elementType:'labels.icon',		stylers:[{visibility:'off'}]	},{		featureType:'administrative',		elementType:'labels.text.fill',		stylers:[{color:'#ADADAD'}]	},{		featureType:'transit',		stylers:[{visibility:'off'}]	},{		featureType:'poi',		stylers:[{visibility:'off'}]	}]
+            };
+
+            // Get the HTML DOM element that will contain your map 
+            // We are using a div with id="map" seen below in the <body>
+            var mapElement = document.getElementById('googlemaps');
+
+            // Create the Google Map using out element and options defined above
+            var map = new google.maps.Map(mapElement, mapOptions);
+        }
+	
+    </script>
+	
+	<!-- TEXT ROTATOR SETTINGS -->
+    <script type="text/javascript">
+    $(".rotate").textrotator({
+      animation: "fade", // You can pick the way it animates when rotating through words. Options are dissolve (default), fade, flip, flipUp, flipCube, flipCubeUp and spin.
+      separator: ",", // If you don't want commas to be the separator, you can define a new separator (|, &, * etc.) by yourself using this field.
+      speed: 2000 // How many milliseconds until the next word show.
+    });
+    </script>
+
+    </body>
+</html>

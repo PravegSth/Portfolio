@@ -1,0 +1,136 @@
+<html>
+<head>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+    <body>
+    <div class="input_fields_wrap">
+    <button class="add_field_button btn btn-primary">Add More Players</button>
+    <div>
+        <input class="form-control" style="width: 200; display: inline;" type="text" placeholder="Player Name" name="mytext[]"/>
+        <input type="checkbox" style="margin-left: 20px;" id="seen" name="seen[]" value="seen"/>
+        <label>Seen</label>
+        <input type="checkbox" id="unseen" name="seen[]" value="Unseen"/>
+        <label style="margin-right: 10px;">Unseen</label>
+        <input class="form-control" style="width: 200; display: inline;" type="text" placeholder="Maal" name="maal[]"/>
+    </div>
+    </div>
+    <button class="ok btn btn-primary" onclick="haha()">Play</button>
+    <br><br><br>
+    <div id="Result"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+
+    $(document).ready(function() {
+	var max_fields      = 10; //maximum input boxes allowed
+	var wrapper   		= $(".input_fields_wrap"); //Fields wrapper
+	var add_button      = $(".add_field_button"); //Add button ID
+
+	var x = 1; //initlal text box count
+	$(add_button).click(function(e){ //on add input button click
+		e.preventDefault();
+		if(x < max_fields){ //max input box allowed
+			x++; //text box increment
+			$(wrapper).append('<div><input class="form-control" style="width: 200; display:inline;" type="text" placeholder="Player Name" name="mytext[]"/><input type="checkbox" style="margin-left: 24px; margin-right: 4px;" id="seen" name="seen[]" value="seen" /><label>Seen</label><input style="margin-left: 5px; margin-right: 4px;" type="checkbox" id="unseen" name="seen[]" value="Unseen" /><label style="margin-right: 14px;">Unseen</label><input class="form-control" style="width: 200; display: inline;" type="text" placeholder="Maal" name="maal[]"/><a style="margin-left: 4px;" href="#" class="remove_field btn btn-danger">Remove</a></div>'); //add input box
+		}
+	});
+
+	$(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+		e.preventDefault(); $(this).parent('div').remove(); x--;
+	})
+});
+
+    function haha(){
+        document.getElementById("Result").innerHTML = ""
+        var values = $("input[name='mytext\\[\\]']")
+              .map(function(){return $(this).val();}).get();
+
+        var seen = $("input[name='seen\\[\\]']")
+              .map(function(){return $(this).val();}).get();
+
+         var maal = $("input[name='maal\\[\\]']")
+              .map(function(){return $(this).val();}).get();
+
+        var players = []
+        for(var i = 0; i<values.length ; i++){
+            players.push({name:values[i], seen:seen[i], maal:Number(maal[i]), point:0})
+        }
+
+        var total = 0
+        for(var i=0; i<values.length; i++){
+            if(players[i]['seen'] == "Unseen" && players[i]['maal'] != 0){
+                players[i]['maal'] = 0
+                alert('Maal of ' + players[i]['name'] + ' will be Zero')
+            }
+
+            total += players[i]['maal']
+        }
+
+
+        while(true){
+            var gamer = prompt("Who is the gamer? ")
+            flag = 0
+            for(var i=0; i<values.length; i++){
+                yo = players[i]['name']
+                if(yo == gamer){
+                    flag = 1
+                    break;
+                }
+             }
+            if(flag == 0){
+                alert("No player with that name")
+            }
+            if(flag == 1){
+                break;
+             }
+         }
+
+         for(var i=0; i<values.length; i++){
+            if(players[i]['seen']=='seen' && players[i]['name'] != gamer){
+                players[i]['point'] = players[i]['maal'] * values.length - (total + 3)
+             }
+            if(players[i]['seen'] == 'Unseen'){
+                players[i]['point'] = - total - 10
+            }
+            if(players[i]['name'] == gamer){
+                i['point'] = 0
+            }
+         }
+
+         var non_gamer_point = 0
+
+         for(var i=0; i<values.length; i++){
+            if(players[i]['name'] != gamer){
+                non_gamer_point -= players[i]['point']
+            }
+         }
+
+         for(var i=0; i<values.length; i++){
+            if(players[i]['name'] == gamer){
+                players[i]['point'] = non_gamer_point
+            }
+         }
+
+        var result = []
+         for(var i=0; i<values.length; i++){
+
+                result.push("Point of " + players[i]['name'] + " = " + players[i]['point'])
+         }
+
+        for(var i=0; i<result.length; i++){
+            document.getElementById('Result').append(result[i])
+            var lineBreak = document.createElement("br")
+            document.getElementById('Result').append(lineBreak)
+        }
+        console.log(players)
+        console.log(total)
+};
+
+    </script>
+
+</body>
+</html>
+
